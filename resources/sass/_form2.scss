@@ -1,0 +1,112 @@
+.container-form2{
+
+    a{
+  position: relative;
+  left: 90%;
+  top:30%;
+  font-size: x-large;
+  font-weight: bold;
+  color: $color14;
+    }
+
+body{
+    font-family: sans-serif;
+}
+    #registro{
+        border-bottom: $color14 1px solid;
+    }
+
+margin-bottom: 35px;
+
+.imgprin{
+    img{
+    position: absolute;
+    left: 8%;
+    top: 3%;
+    height:120px;
+    width: 130px;
+}
+}
+
+.container-infoPer{
+    border-bottom: $color14 1px solid;
+
+    .infoP{
+        position: relative;
+        left: 60%;
+
+    input{
+        width: 100%;
+    }
+
+    label{
+        color: $color9;
+    }
+}
+.imglogo{
+    img{
+        position: absolute;
+        left: 40%;
+        top: 2%;
+        height:230px;
+        width: 300px;
+    }
+}
+}
+
+.container-checkBox{
+
+border-bottom: $color14 1px solid;
+
+    .caja1{
+        position: relative;
+        left: 20%;
+        margin-bottom: 15px;
+    }
+
+ input[type=checkbox]:checked + .custom-control-label::before {
+    background-color:$color14;
+}
+
+}
+
+.container-ButtonRadios{
+
+    border-bottom: $color14 1px solid;
+
+    .btnRad{
+        position: relative;
+        left: 38.5%;
+        margin-bottom: 15px;
+    }
+
+    input[type=checkbox]:checked + .custom-control-label::before {
+        background-color:$color14;
+    }
+}
+
+.container-map{
+
+.mapa{
+ width: 50%;
+ position: relative;
+ left: 25.5%;
+ margin-bottom: 25px;
+}
+
+}
+
+button{
+    height: 50px;
+    width: 30%;
+    position: relative;
+    left: 35%;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: $color14;
+}
+
+
+}

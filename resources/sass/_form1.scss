@@ -1,0 +1,104 @@
+.container-form{
+
+    margin-bottom: 35px;
+
+    #textP{
+        border-bottom: $color14 1px solid;
+    }
+
+    // estilo al botón de inicio
+    a{
+        position: relative;
+        left: 60%;
+        top:5%;
+        font-size: x-large;
+        font-weight: bold;
+        color: $color14;
+          }
+
+
+input[type=radio] {
+    box-sizing: border-box;
+    appearance: none;
+    background: $color9;
+    width: 20px;
+    border-radius: 20px;
+    height: 25px;
+    cursor: pointer;
+}
+
+input[type=radio]:checked  {
+    background: $color14;
+    border: none !important;
+  
+  }
+  
+  input[type=radio]:focus {
+      outline: block;
+  }
+
+    .imgprin{
+        img{
+        position: relative;
+        left: 50%;
+        top: 18px;
+        height: 110px;
+        width: 120px;
+    }
+}
+
+.img1{
+    position: relative;
+    left: 15%;
+    top: 15%;
+    img{
+        height: 80%;
+        width: 64%;
+        border-radius: 8px;
+    }
+}
+
+
+.img2{
+    position: relative;
+    left: 15%;
+    top: 25%;
+
+    img{
+    height: 80%;
+    width: 64%;
+    border-radius: 8px;
+    }
+
+}
+
+
+
+form{
+
+    label{
+color: $color9;
+
+p{
+    color: $color18;
+}
+    }
+      
+    button{
+        position: relative;
+        left: 30%;
+        width: 40%;
+        height: 45px;
+        border-radius: 10px;
+    }
+
+    button:hover{
+        background-color: $color14;
+    }
+
+    input[type=checkbox]:checked + .custom-control-label::before {
+        background-color:$color14;
+    }
+}
+
+}

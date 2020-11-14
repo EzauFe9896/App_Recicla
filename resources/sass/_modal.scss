@@ -1,0 +1,17 @@
+.container-modal{
+    // Posiciona el logo de reciclar en la ventana del modal
+    i{
+        top: 5%;
+        position: absolute;
+        left: 85%;
+        color: $color2;
+    }
+
+    a{
+        color: $color14;
+    }
+
+    .modal-header{
+background-color: $color7;
+    }
+}

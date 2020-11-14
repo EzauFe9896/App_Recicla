@@ -1,0 +1,149 @@
+ @import 'variable';
+ @import 'search';
+ @import 'carousel';
+ @import 'footer';
+ @import 'gallery';
+ @import 'modal';
+ @import 'maps';
+ @import 'form1';
+ @import 'form2';
+
+ /*Barra encima del topnav*/
+ .container-up{
+    height: 60px;
+    background-color: $color14;
+    display: flex;
+  
+  button{
+      background-color: $color14;
+      color: $color2;
+      display: inline-block;
+      font-size: 12px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    p{
+      text-align: center;
+      margin-top: 17px;
+      color: $color2;
+     }
+
+  .col-md-2{
+    margin-top: 18px;
+           }
+}
+/*Fin del estilo*/
+
+.container-principal {
+
+    background-color: $color1;/* Add a red background color to the top navigation bar */
+    height: 85px;
+    width: 100%;
+
+    // Da estilo posicion y demás a la imagen de Jamar
+   img {
+
+    height: 60px;
+    width: 180px;
+    margin-top: 10px;
+    padding-left: 100px;
+    border-radius: 15px;
+
+    cursor: pointer;
+
+  }
+  /*Da estilo al icono de barras*/
+  button.icon-bar{
+
+    position: fixed;
+    border: none;
+    background: $color1;
+    height: 35px;
+    width: 40px;
+    color: $color2;
+    font-size: 18pt;
+    outline: none;
+    margin-left: 20px;
+    margin-top: 23px;
+    border-radius: 5px;
+
+    }
+
+      /* Change the color of links on hover */
+   .icon-bar:hover{
+    background: $color14;
+  }
+
+  /* Style the links inside the navigation bar */
+  ul {
+
+    list-style: none;
+    float: right;
+    display: block;
+    color: $color2;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: 25px;
+
+  }
+  a{
+    color: $color2;
+    padding: 5px;
+    text-align: center;
+    }
+
+
+  .social {
+   font-size: 14px;
+   color: $color2;
+   margin-top: 30px;
+   padding-left: 8px;
+   cursor: pointer;
+   }
+
+
+  /* Change the color of links on hover */
+  a:hover {
+    background-color: $color14;
+    color: $color4;
+  }
+
+    /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+    @media screen and (max-width: 600px) {
+        .container-principal a{
+          float: none;
+          display: block;
+          text-align: left;
+          width: 100%;
+          margin: 0;
+          padding: 14px;
+        }
+      }
+  }
+
+  /*Sub barra # 2*/
+  .container-menu {
+    padding-left: 120px;
+    height: 55px;
+    background-color: $color16;
+
+    a{
+    margin-top: 15px;
+    color: $color17;
+  }
+
+  }
+   /*Fin del estilo de la sección*/
+
+    /*Estilo Sub barra #4*/
+  .container-info2{
+    text-align: center;
+     width: 100%;
+     background: $color13;
+
+     p{
+       margin-top: 10px;
+     }
+ }
+  /*Fin del estilo*/

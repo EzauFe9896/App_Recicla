@@ -1,0 +1,25 @@
+  //  Estilo del carousel
+   /* Make the image fully responsive */
+   @mixin carrusel {
+    width: 100%;
+    height: 60%;
+    padding-right: 40px;
+    margin-top: 1px;
+    margin-bottom: 25px;
+    margin-left: 23px;
+  }
+  
+      .carousel-inner {
+      
+      img {
+     @include carrusel;
+      }
+
+      h5{
+        background-color: $color1;
+      }
+      p{
+        background: $color1;
+      }
+    }
+    // Fin del estilo del carrusel
