@@ -26,6 +26,25 @@
 
 
 <body>
+
+ <div class="container-msj">
+     {{-- Muestra el mensaje si se registra correctamente --}}
+ @if (session('success'))
+ <div class="row m-0 w-100">
+ <div class="col-sm-12">
+     <div class="alert  alert-success alert-dismissible fade show" role="alert">
+        <h4 class="alert-heading">¡Bien Hecho!</h4>
+        {{ session('success') }}
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+             </button>
+     </div>
+ </div>
+</div>
+ @endif
+ {{-- Fin del mensaje --}}
+ 
+ </div>
  <!-- Barra encima del topnav-->
 
  <div class="container-up">
