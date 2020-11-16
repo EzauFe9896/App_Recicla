@@ -46,8 +46,12 @@ class SolicitaTransporteController extends Controller
         $solicitud->tipo = $request->get('Tipo');
         $solicitud->cantidad = $request->get('Cantidad');
         $solicitud->ubicacion = $request->get('Ubicacion');
-        $solicitud->save();
-        return redirect('/')->with('success', 'solicitud agregada exitosamente');
+      
+          if($solicitud->save()){
+            return redirect('/')->with('success', '¡Solicitud enviada exitosamente!');
+        }else{
+            return back()->with('error', '¡Los datos no se guardaron correctamente!');
+        }
 
     }
 
