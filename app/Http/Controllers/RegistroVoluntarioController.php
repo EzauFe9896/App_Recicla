@@ -49,8 +49,12 @@ class RegistroVoluntarioController extends Controller
         $registro->email = $request->get('Email');
         $registro->sexo = $request->get('Sexo');
         $registro->comentario = $request->get('Comentario');
-        $registro->save();
-        return redirect('/')->with('success', 'Registro agregado exitosamente');
+       
+        if($registro->save()){
+            return redirect('/')->with('success', '¡Registro enviado exitosamente!');
+        }else{
+            return back()->with('error', '¡Los datos no se guardaron correctamente!');
+        }
     }
 
     /**
