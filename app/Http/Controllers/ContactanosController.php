@@ -46,8 +46,12 @@ class ContactanosController extends Controller
         $contacto->provincia = $request->get('Provincia');
         $contacto->email = $request->get('Email');
         $contacto->codigo = $request->get('Codigo');
-        $contacto->save();
-        return redirect('/')->with('success', '¡Información enviada exitosamente!');
+        
+        if($contacto->save()){
+            return redirect('/')->with('success', '¡Información enviada exitosamente!');
+        }else{
+            return back()->with('error', '¡Los datos no se guardaron correctamente!');
+        }
     }
 
     /**
