@@ -81,7 +81,7 @@
     <div class="row m-0 w-100">
       <div class="col-2 col-md-2">
       <button class="icon-bar"><i class="fa fa-bars"></i></button>
-      <i target="_blank" href="">
+      <i href="{{ url('/') }}">
       <img src="images/LogoApp.jpg" alt="VT&WT" ></i>
     </div>
 
@@ -719,7 +719,7 @@ color="white" size="2"><strong>¿NECESITAS AYUDA?</strong></font>
 
 <div class="row">
 <label><img src="images/LogoApp.jpg" style="width:25%;height:40%" alt="app"/><br><br>
-<a target="_blank" href="">
+<a target="_blank" method="get" role="button" href="{{action('SolicitaTransporteController@create')}}">
 <button type="button" class="btn btn-info btn-lg">SOLICITAR TRANSPORTE DE DESECHOS</button></a></label>
 <div class="col-md-12"><font face="Verdana, Geneva, sans-serif"
     color="white" size="2"><strong>CONÉCTATE CON NOSOTROS</strong></font>
