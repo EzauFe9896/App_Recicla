@@ -18,7 +18,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-  <title>VT & WT C.R</title>
+  <title>VT & WT C.R</title> 
 
 
   <script src="js/popover.js"></script>
@@ -48,70 +48,104 @@
  <!-- Barra encima del topnav-->
 
  <div class="container-up">
-    <div class="row m-0 w-100">
+  <div class="row m-0 w-100">
     <div class="col-md-10">
-    <p>Ayudanos a&nbsp; salvar la naturaleza&nbsp;&nbsp;<strong>
-<button type="button" class="btn btn-info btn-sm"><strong>VT & WT C.R</strong></button>
-&nbsp;&nbsp;&nbsp;!&nbsp;NO TE QUEDES CON LOS BRAZOS CRUZADOS&nbsp;!</strong></p>
+      <p>Ayudanos a&nbsp; salvar la naturaleza&nbsp;&nbsp;<strong>
+        <button type="button" class="btn btn-info btn-sm"><strong>VT & WT C.R</strong></button>
+      &nbsp;&nbsp;&nbsp;!&nbsp;NO TE QUEDES CON LOS BRAZOS CRUZADOS&nbsp;!</strong></p>
     </div>
 
-      <div class="col-md-2">
+    <div class="col-md-2">
       <div class="row justify-content-end">
-    <div class="col-2">
-    <a href="#facebook"><font face="Verdana, Geneva, sans-serif"
-      color="white"  size="4"><i class="fa fa-facebook-square" aria-hidden="true"></i></font></a>
-    </div>
-     <div class="col-2">
-    <a href="#intagram"><font face="Verdana, Geneva, sans-serif" color="white" size="4">
-    <i class="fa fa-instagram" aria-hidden="true"></i></font></a>
-    </div>
-     <div class="col-4">
-    <a href="#youtube"><font face="Verdana, Geneva, sans-serif" color="white" size="4"><i class="fa fa-youtube-play" aria-hidden="true"></i></font></a>
-    </div>
+        <div class="col-2">
+          <a href="#facebook"><font face="Verdana, Geneva, sans-serif"
+            color="white"  size="4"><i class="fa fa-facebook-square" aria-hidden="true"></i></font></a>
+          </div>
+          <div class="col-2">
+            <a href="#intagram"><font face="Verdana, Geneva, sans-serif" color="white" size="4">
+              <i class="fa fa-instagram" aria-hidden="true"></i></font></a>
+            </div>
+            <div class="col-4">
+              <a href="#youtube"><font face="Verdana, Geneva, sans-serif" color="white" size="4"><i class="fa fa-youtube-play" aria-hidden="true"></i></font></a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
     </div>
 
     <!-- Fin barra del encima del topnav -->
 
     <!-- Barra de menu principal -->
- <div class="container-principal">
+    <div class="container-principal">
 
-    <div class="row m-0 w-100">
-      <div class="col-2 col-md-2">
-      <button class="icon-bar"><i class="fa fa-bars"></i></button>
-      <i href="{{ url('/') }}">
-      <img src="images/LogoApp.jpg" alt="VT&WT" ></i>
-    </div>
+      <div class="row m-0 w-100">
+        <div class="col-2 col-md-2">
+          <button class="icon-bar"><i class="fa fa-bars"></i></button>
+          <i href="{{ url('/') }}">
+            <img src="images/LogoApp.jpg" alt="VT&WT" ></i>
+          </div>
 
-      <div class="col-10">
-        <div class="row">
-          <div class="col-md-7">
-             <!--  search bar -->
-              <div class="box">
+          <div class="col-10">
+            <div class="row">
+              <div class="col-md-7">
+               <!--  search bar -->
+               <div class="box">
                 <div class="container-4">
                   <input type="search" id="search" placeholder="Find in V.T.&.W.T..." />
                   <button class="icon"><i class="fa fa-search"></i></button>
                 </div>
               </div>
-            <!-- Fin del search bar -->
-          </div>
+              <!-- Fin del search bar -->
+            </div>
 
-          <div class="col-md-5 d-flex">
+            <div class="col-md-5 d-flex">
 
-            <nav class="navbar navbar-expand-lg">
-              <ul class="d-flex">
-            <li><a href="{{ url('/') }}"><strong>Inicio</strong></a></li>
+              <nav class="navbar navbar-expand-md">
+                <div class="container">
+                  <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto d-flex">
+                      <li class="nav-item"><a class="nav-link" href="{{ url('/') }}"><strong>Inicio</strong></a></li>
 
-            <li><a method="get"  href="{{action('ContactanosController@create')}}"><strong>Contactanos</strong></a></li>
+                      <li class="nav-item"><a class="nav-link" method="get"  href="{{action('ContactanosController@create')}}"><strong>Contactanos</strong></a></li>
 
-            <li><a href="#nosotros" data-toggle="modal" data-target="#staticBackdrop"><strong>Acerca de</strong></a></li>
+                      <li class="nav-item"><a class="nav-link" href="#nosotros" data-toggle="modal" data-target="#staticBackdrop"><strong>Acerca de</strong></a></li>
 
-            <li><a href="{{ url('/recurso') }}"><strong>Recursos</strong></a></li>
+                      <li class="nav-item"><a class="nav-link" href="{{ url('/recurso') }}"><strong>Recursos</strong></a></li>
 
-            <li><a href="{{ url('/login') }}"><strong>Inicia Sesión</strong></a></li>
-              </ul>
+                      <!-- Inicio rutas login, register, logout -->
+                      @guest
+                      @if (Route::has('login'))
+                      <li class="nav-item">
+                        <a class="nav-link"  href="{{ route('login') }}"><strong>{{ __('Iniciar sesión') }}</strong> </a>
+                      </li>
+                      @endif
+
+                      @if (Route::has('register'))
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}"><strong>{{ __('Registrarse') }}</strong></a>
+                      </li>
+                      @endif
+                      @else 
+                      <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"><strong>Hola, {{ Auth::user()->name }}</strong>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelleby="navbarDropdown">
+                          <a class="dropdown-item mb-40" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();">
+                        {{ __('Cerrar sesión') }}</a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                          @csrf
+                        </form>
+                      </div>
+                    </li>
+                    @endguest
+                    <!-- Fin rutas login, register, logout -->
+                  </ul>
+                </div>
+              </div>
             </nav>
 
           </div>
@@ -119,7 +153,7 @@
       </div>
     </div>
   </div>
-<!-- Fin barra Menu principal -->
+  <!-- Fin barra Menu principal -->
 
 <!-- Sub barra # 2 -->
 <div class="container-menu">

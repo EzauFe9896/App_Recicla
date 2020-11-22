@@ -363,15 +363,16 @@ footer {
     border-radius: 5px; }
   .container-principal .icon-bar:hover {
     background: #42d2b6; }
-  .container-principal ul {
+  .container-principal .container ul {
     list-style: none;
     float: right;
     display: block;
     color: #F7F7F7;
     text-decoration: none;
     font-size: 13px;
-    margin-top: 25px; }
-  .container-principal a {
+    margin-bottom: 2px;
+    margin-top: 20px; }
+  .container-principal .container a {
     color: #F7F7F7;
     padding: 5px;
     text-align: center; }
@@ -381,7 +382,7 @@ footer {
     margin-top: 30px;
     padding-left: 8px;
     cursor: pointer; }
-  .container-principal a:hover {
+  .container-principal .container a:hover {
     background-color: #42d2b6;
     color: black; }
   @media screen and (max-width: 600px) {
