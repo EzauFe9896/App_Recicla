@@ -1,8 +1,11 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistroVoluntarioController;
 use App\Http\Controllers\SolicitaTransporteController;
+
+// use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +17,8 @@ use App\Http\Controllers\SolicitaTransporteController;
 |
 */
 
+
+// Ruta de inicio
 Route::get('/', function () {
     return view('inicio');
 });
@@ -30,7 +35,7 @@ Route::get('/recurso', function () {
 });
 
 // Ruta de autenticación
-Auth::routes(); 
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -45,3 +50,18 @@ Route::post('solicitud/add',[SolicitaTransporteController::class, 'store']);
 // Ruta del form para enviar información
 Route::get('contacto/add' , 'ContactanosController@create');
 Route::post('contacto/add','ContactanosController@store');
+
+// Ruta que dirige al profile del usuario
+// Route::get('/profile/{id}', function ($id) {
+
+// $user = User::find($id);
+
+//   return view('profile', [
+
+//       'user' => $user
+
+//   ]);})->name('profile');
+
+Route::get('/profile', function () {
+    return view('profile');
+});

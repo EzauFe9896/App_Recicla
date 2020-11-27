@@ -1,0 +1,123 @@
+@import 'variable';
+
+.container-profile{
+
+
+
+    h2{
+
+        color: $color14;
+        left: 22%;
+        position: absolute;
+        top: 50px;
+    }
+
+    form{
+
+        top: 10%;
+        left: 45%;
+        position: relative;
+
+
+        .invoiceBox{
+        margin-bottom: 25%;
+        position: relative;
+        left: 7%;
+        top: 16%;
+
+        label {
+            display: block;
+        }
+
+        }
+           .invoiceBox > input {
+            display: none;
+          }
+
+          .boxFile {
+            display: inline-block;
+            width: 124%;
+            border: 1px solid $color18;
+            border-radius: 10px;
+            background: $color2;
+            color:$color18;
+            padding: 20px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+          }
+          .boxFile:hover {
+              cursor: pointer;
+              background: $color14;
+              color: $color2;
+          }
+          .boxFile i {
+              display: block;
+              font-size: 26px;
+              margin-bottom: 5px;
+          }
+          .attached,
+          .attached:hover,
+          .attached:focus {
+              background: $color19;
+            color: $color2;
+            border: 1px solid $color19;
+          }
+
+        button{
+            position: absolute;
+            left: 3%;
+            width: 36%;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 500;
+            font-size: large;
+            padding: 15px;
+            text-align: center;
+        }
+    }
+    .images{
+        top: 35%;
+        position: relative;
+
+
+        .img1{
+            top: 25%;
+            position: relative;
+            margin-bottom: 9%;
+
+            img{
+                width: 65%;
+                height: 30%;
+                }
+        }
+
+        .img2{
+            position: relative;
+            top: 15%;
+            margin-bottom: 10%;
+
+            img{
+            width: 65%;
+            height: 30%;
+            }
+        }
+    }
+
+
+    .inicio{
+        a{
+        position: absolute;
+        left: 6%;
+        top: 6%;
+        font-size: larger;
+        color: $color14;
+        font-weight: bold;
+    }
+    }
+
+}
+
