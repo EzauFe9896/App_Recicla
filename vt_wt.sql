@@ -184,6 +184,7 @@ CREATE TABLE `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `avatar` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -193,7 +194,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -202,7 +203,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Ezau','','joseuaze@gmail.com',NULL,'$2y$10$6a8uMCIpcPbTTH/DJaJqtOy4Iv.gsej0CXqL4OS2VxYE7Bj1lEKDq','0OscubbVmyPB5bO04nLkxbSYdpwh4OS6JGIjh8z3iT8bxTmpLn7AK3smhyCM','2020-11-12 04:40:36','2020-11-12 04:40:36'),(2,'Ezau José','F21E26','joseuaze22@gmail.com',NULL,'$2y$10$munNcotHlLtsmowV6NNQB.ULhS0KNQI7Hl2mc4L//5.4wNnlWuyB2','8GaBsfwiquI2kOCJIyVURJiomUYP0VEPj8DmID3pHnJ6K5nlHvTpxlOhzsTD','2020-11-17 06:20:28','2020-11-17 06:20:28');
+INSERT INTO `users` VALUES (1,'Ezau','','','joseuaze@gmail.com',NULL,'$2y$10$6a8uMCIpcPbTTH/DJaJqtOy4Iv.gsej0CXqL4OS2VxYE7Bj1lEKDq','0OscubbVmyPB5bO04nLkxbSYdpwh4OS6JGIjh8z3iT8bxTmpLn7AK3smhyCM','2020-11-12 04:40:36','2020-11-12 04:40:36'),(2,'Ezau José','F21E26','','joseuaze22@gmail.com',NULL,'$2y$10$munNcotHlLtsmowV6NNQB.ULhS0KNQI7Hl2mc4L//5.4wNnlWuyB2','igLvQcd6deTU3CSfUEb3CC94PEB7f2jZjXqwisF0aNDBMF88dFLVkjYogzk3','2020-11-17 06:20:28','2020-11-17 06:20:28'),(3,'Haydee','Maadre72','','haydee@gmail.com',NULL,'$2y$10$ugcOeh0lZ0HLPkdGjxFVq.T7YN/7HhoEZuNL7Ylh9Sso96zi82nT6','NRFsfjxJcPocxLEqoLx25bz0FEqy6FNFUHl5wOFMuC8O6lTqAakcnSJ2dOch','2020-11-23 01:17:16','2020-11-23 01:17:16');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,4 +224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-16 17:58:33
+-- Dump completed on 2020-11-26 22:36:42
