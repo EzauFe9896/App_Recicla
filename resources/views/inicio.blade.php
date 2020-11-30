@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Con esta dirección llamo a mis estilos -->
-  <link href="{{asset('css/styles.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{mix('css/styles.css')}}">
 <!-- -------------------------------------- -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -18,7 +18,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-  <title>VT & WT C.R</title> 
+  <title>VT & WT C.R</title>
 
 
   <script src="js/popover.js"></script>
@@ -43,7 +43,7 @@
 </div>
  @endif
  {{-- Fin del mensaje --}}
- 
+
  </div>
  <!-- Barra encima del topnav-->
 
@@ -51,7 +51,7 @@
   <div class="row m-0 w-100">
     <div class="col-md-10">
       <p>Ayudanos a&nbsp; salvar la naturaleza&nbsp;&nbsp;<strong>
-        <button type="button" class="btn btn-info btn-sm"><strong>VT & WT C.R</strong></button>
+        <button href="{{ url('/') }}" type="button" class="btn btn-info btn-sm"><strong>VT & WT C.R</strong></button>
       &nbsp;&nbsp;&nbsp;!&nbsp;NO TE QUEDES CON LOS BRAZOS CRUZADOS&nbsp;!</strong></p>
     </div>
 
@@ -80,14 +80,32 @@
 
       <div class="row m-0 w-100">
         <div class="col-2 col-md-2">
-          <button class="icon-bar"><i class="fa fa-bars"></i></button>
-          <i href="{{ url('/') }}">
-            <img src="images/LogoApp.jpg" alt="VT&WT" ></i>
+            <div class="dropdown">
+                <button class="icon-bar" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-bars"></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{{ url('/') }}"><strong>Inicio</strong></a>
+                  <a class="dropdown-item" method="get"  href="{{action('ContactanosController@create')}}"><strong>Contactanos</strong></a>
+                  <a class="dropdown-item" href="#nosotros" data-toggle="modal" data-target="#staticBackdrop"><strong>Acerca de</strong></a>
+                  <a class="dropdown-item" href="{{ url('/recurso') }}"><strong>Recursos</strong></a>
+                  <a class="dropdown-item" href="{{ url('/login') }}"><strong>Iniciar Sesión</strong></a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" method="get" role="button" href="{{action('RegistroVoluntarioController@create')}}">Registrarse como voluntario</a>
+                  <a class="dropdown-item" href="#tipos_residuos">Tipos de residuos</a>
+                  <a class="dropdown-item"  href="{{ url('/calculadora') }}">Gana en E-colones</a>
+                  <a class="dropdown-item"  method="get" role="button" href="{{action('SolicitaTransporteController@create')}}"><strong>Solicitar tranporte de desechos</strong></a>
+
+              </div>
+             </div>
+          <a href="{{ url('/') }}">
+            <img src="images/LogoApp.jpg" alt="VT&WT" ></a>
           </div>
 
           <div class="col-10">
             <div class="row">
-              <div class="col-md-7">
+              <div class="col-md-6">
                <!--  search bar -->
                <div class="box">
                 <div class="container-4">
@@ -98,7 +116,7 @@
               <!-- Fin del search bar -->
             </div>
 
-            <div class="col-md-5 d-flex">
+            <div class="col-md-6 d-flex">
 
               <nav class="navbar navbar-expand-md">
                 <div class="container">
@@ -125,9 +143,9 @@
                         <a class="nav-link" href="{{ route('register') }}"><strong>{{ __('Registrarse') }}</strong></a>
                       </li>
                       @endif
-                      @else 
+                      @else
                       <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"><strong>Hola, {{ Auth::user()->name }}</strong>
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"><strong>Hola, {{ Auth::user()->username }}</strong>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelleby="navbarDropdown">
@@ -135,8 +153,9 @@
                           onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
                         {{ __('Cerrar sesión') }}</a>
+                        <a class="dropdown-item mb-40"  href="{{ url('profile') }}"> {{ __('Profile') }} </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        <form id= "logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                           @csrf
                         </form>
                       </div>
@@ -857,26 +876,6 @@ Condiciones&nbsp;<br>y campañas&nbsp;eventos<br>
 <!-- ---------------------Fin del FOOTER-------------------------- -->
 
 
-<script>
-  // Funcio que valida los campos requeridos en el pequeño formulario
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-  (function() {
-    'use strict';
-    window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    }, false);
-  })();
-  </script>
+<script src="js/validateForm.js"></script>
 </body>
 </html>

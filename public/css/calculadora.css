@@ -1,22 +1,29 @@
 .container-principal {
-  margin-bottom: 10%; }
-  .container-principal a {
-    position: absolute;
-    left: 15%;
-    font-size: x-large;
-    font-weight: bold;
-    color: #42d2b6; }
-  .container-principal img {
-    position: absolute;
-    width: 30%;
-    height: 88%;
-    left: 23.5%;
-    top: 16%; }
-  .container-principal .text-centrado {
-    position: relative;
-    left: 10%;
-    margin-top: 40px;
-    text-align: center; }
+  margin-bottom: 10%;
+}
+
+.container-principal a {
+  position: absolute;
+  left: 15%;
+  font-size: x-large;
+  font-weight: bold;
+  color: #42d2b6;
+}
+
+.container-principal img {
+  position: absolute;
+  width: 30%;
+  height: 88%;
+  left: 23.5%;
+  top: 16%;
+}
+
+.container-principal .text-centrado {
+  position: relative;
+  left: 10%;
+  margin-top: 40px;
+  text-align: center;
+}
 
 .calculadora {
   display: block;
@@ -28,17 +35,20 @@
   border-radius: 25px;
   position: relative;
   left: 30%;
-  margin-top: 6%; }
+  margin-top: 6%;
+}
 
 .calculadora td button {
   display: block;
   width: 70px;
   height: 70px;
   font-size: 25px;
-  border-radius: 15px; }
+  border-radius: 15px;
+}
 
 button:hover {
-  background-color: pink; }
+  background-color: pink;
+}
 
 #resultado {
   display: block;
@@ -49,6 +59,6 @@ button:hover {
   height: 100px;
   line-height: 100px;
   background-color: #F7F7F7;
-  border-radius: 25px; }
+  border-radius: 25px;
+}
 
-/*# sourceMappingURL=calculadora.css.map */

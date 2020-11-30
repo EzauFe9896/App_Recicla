@@ -13,7 +13,7 @@
     height: 60px;
     background-color: $color14;
     display: flex;
-  
+
   button{
       background-color: $color14;
       color: $color2;
@@ -81,7 +81,7 @@
     list-style: none;
     float: right;
     display: block;
-    color: $color2;
+    color: $color6;
     text-decoration: none;
     font-size: 13px;
     margin-top: 25px;
@@ -89,8 +89,9 @@
   }
   a{
     color: $color2;
-    padding: 5px;
-    text-align: center;
+    padding: 10px;
+    text-align: left;
+    margin-block-start: 40px;
     }
 
 

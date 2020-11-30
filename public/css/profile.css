@@ -1,0 +1,111 @@
+.container-profile h2 {
+  color: #42d2b6;
+  left: 22%;
+  position: absolute;
+  top: 50px;
+}
+
+.container-profile form {
+  top: 10%;
+  left: 45%;
+  position: relative;
+}
+
+.container-profile form .invoiceBox {
+  margin-bottom: 25%;
+  position: relative;
+  left: 7%;
+  top: 16%;
+}
+
+.container-profile form .invoiceBox label {
+  display: block;
+}
+
+.container-profile form .invoiceBox > input {
+  display: none;
+}
+
+.container-profile form .boxFile {
+  display: inline-block;
+  width: 124%;
+  border: 1px solid #52a1d5;
+  border-radius: 10px;
+  background: #F7F7F7;
+  color: #52a1d5;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.container-profile form .boxFile:hover {
+  cursor: pointer;
+  background: #42d2b6;
+  color: #F7F7F7;
+}
+
+.container-profile form .boxFile i {
+  display: block;
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.container-profile form .attached,
+.container-profile form .attached:hover,
+.container-profile form .attached:focus {
+  background: #21bf73;
+  color: #F7F7F7;
+  border: 1px solid #21bf73;
+}
+
+.container-profile form button {
+  position: absolute;
+  left: 3%;
+  width: 36%;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 500;
+  font-size: large;
+  padding: 15px;
+  text-align: center;
+}
+
+.container-profile .images {
+  top: 35%;
+  position: relative;
+}
+
+.container-profile .images .img1 {
+  top: 25%;
+  position: relative;
+  margin-bottom: 9%;
+}
+
+.container-profile .images .img1 img {
+  width: 65%;
+  height: 30%;
+}
+
+.container-profile .images .img2 {
+  position: relative;
+  top: 15%;
+  margin-bottom: 10%;
+}
+
+.container-profile .images .img2 img {
+  width: 65%;
+  height: 30%;
+}
+
+.container-profile .inicio a {
+  position: absolute;
+  left: 6%;
+  top: 6%;
+  font-size: larger;
+  color: #42d2b6;
+  font-weight: bold;
+}
+
