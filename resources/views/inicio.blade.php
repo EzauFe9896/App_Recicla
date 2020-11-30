@@ -91,7 +91,7 @@
                <!--  search bar -->
                <div class="box">
                 <div class="container-4">
-                  <input type="search" id="search" placeholder="Find in V.T.&.W.T..." />
+                  <input name="buscarpor" type="search" id="search" placeholder="Find in V.T.&.W.T..." />
                   <button class="icon"><i class="fa fa-search"></i></button>
                 </div>
               </div>
