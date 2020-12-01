@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistroVoluntarioController;
 use App\Http\Controllers\SolicitaTransporteController;
+use App\Http\Controllers\UserController;
 
 // use App\Models\User;
 /*
@@ -62,6 +63,9 @@ Route::post('contacto/add','ContactanosController@store');
 
 //   ]);})->name('profile');
 
-Route::get('/profile', function () {
+/*Route::get('/profile', function () {
     return view('profile');
-});
+});*/
+
+Route::get('profile/{id}',[UserController::class, 'edit']);
+Route::post('profile/{id}',[UserController::class, 'update']);

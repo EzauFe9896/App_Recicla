@@ -1,156 +1,154 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-          crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+  crossorigin="anonymous">
 
 
   <!-- Con esta dirección llamo a mis estilos -->
   <link rel="stylesheet" href="{{mix('css/profile.css')}}">
   <!-- -------------------------------------- -->
 
-  <title>{{ Auth::user()->name }}</title>
+  <title>Editar Perfil</title>
 
-</head>
+</head> 
+<body>
 
+  <div class="container-profile">
 
-
-
-
-<div class="container-profile">
-
-        <div class="inicio">
-                <a href="{{ url('/') }}">Inicio</a>
-        </div>
-        <br>
-        <h2>User Profile for:&nbsp;{{ Auth::user()->name }}</h2>
-        <br>
-
-       <div class="row m-0 w-100">
-        <div class="col-md-6">
-
- <form method="post" {{-- action="{{route('user.profile.update', $user)}}"--}} enctype="multipart/form-data">
-                               @csrf
-                               @method('PUT'){{--  <----No se si esto es mejor cambiarlo por patch --}}
-<div class="mb-4">
-<img class="img-profile rounded-circle" src="images/vidrio.jpg">
-{{-- Aqui un ejemplo con una imagen, pero debería de llamar la imagen que el usuario elija --}}
- </div>
-
- <div class="row m-0 w-100">
-	<div class="col-sm-4 col-12">
-    <div class="invoiceBox">
-      <label for="file">
-        <div class="boxFile" data-text="Seleccionar archivo">
-          <span>SELECCIONAR ARCHIVO</span>
-        </div>
-      </label>
-      <input id="file" multiple="" name="invoice[]" size="6000" type="file"
-      accept="application/pdf,image/x-png,image/gif,image/jpeg,image/jpg,image/tiff">
+    <div class="inicio">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('/') }}">{{ __('Inicio') }}</a>
+      </li>
     </div>
-  </div>
-</div>
+    <br>
+    <h2>Perfil:&nbsp;{{Auth::user()->name}}</h2>
+    <br>
 
+    <div class="row m-0 w-100">
+      <div class="col-md-6">
 
-
- <div class="form-group">
-        <div class="col-md-5 mb-3">
-         <label for="username">Nombre de Usuario</label>
-<input type="text" name="username"
-class="form-control @error('username') is-invalid @enderror" id="username"
-value="{{ Auth::user()->username }}">
-
-            @error('username')
-            <div class="invalid-feedback">{{$message}}</div>
-            @enderror
-        </div>
-   </div>
-
-
-
- <div class="form-group">
-        <div class="col-md-5 mb-3">
- <label for="name">Nombre</label>
-   <input type="text" name="name"
-   class="form-control @error('name') is-invalid @enderror" id="name"
-   value="{{ Auth::user()->name }}">
-
-                     @error('name')
-                     <div class="alert alert-danger">{{$message}}</div>
-                     @enderror
-   </div>
- </div>
-
-
- <div class="form-group">
-        <div class="col-md-5 mb-3">
-    <label for="email">Correo</label>
-            <input type="text" name="email"  class="form-control @error('email') is-invalid @enderror"
-            id="email" value="{{Auth::user()->email}}">
-
-               @error('email')
-               <div class="alert alert-danger">{{$message}}</div>
-               @enderror
-   </div>
- </div>
-
-      <div class="form-group">
-        <div class="col-md-5 mb-3">
-       <label for="password">Contraseña</label>
-        <input type="password" name="password"
-        class="form-control @error('password') is-invalid @enderror" id="password"
-        value="{{Auth::user()->password}}">
-
-                 @error('password')
-                <div class="alert alert-danger">{{$message}}</div>
-                 @enderror
+       {{-- Muestra el mensaje si se registra correctamente --}}
+       @if (session('success'))
+       <div class="row m-0 w-100">
+        <div class="col-8">
+           <div class="alert  alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+       </div>
      </div>
+     @endif
+     {{-- Fin del mensaje --}}
+
+     <form method="post" action="{{action('UserController@update', $id)}}" enctype="multipart/form-data">
+      @csrf
+
+      {{-- @method('PUT')   <----No se si esto es mejor cambiarlo por patch --}}
+      <div class="mb-4">
+        <img class="img-profile rounded-circle" src="{{ asset(Auth::user()->photo_route) }}">
+        {{-- Aqui un ejemplo con una imagen, pero debería de llamar la imagen que el usuario elija --}}
       </div>
 
+      <div class="row m-0 w-100">
+       <div class="col-sm-4 col-12">
+        <div class="invoiceBox">
+          <label for="file">
+            <div class="boxFile" data-text="Seleccionar archivo">
+              <span>SELECCIONAR ARCHIVO</span>
+            </div>
+          </label>
+          <input id="file" multiple="" name="avatar" size="6000" type="file"
+          accept="application/pdf,image/x-png,image/gif,image/jpeg,image/jpg,image/tiff">
+        </div>
+      </div>
+    </div>
 
-  <div class="form-group">
+       <div class="form-group">
         <div class="col-md-5 mb-3">
-      <label for="password-confirmation">Confirmar Contraseña</label>
-           <input type="password" name="password_confirmation"
-           class="form-control @error('password_confirmation') is-invalid @enderror text-center"
-        id="password-confirmation" placeholder="Confirmar Contraseña">
+         <label for="name">Nombre</label>
+         <input type="text" name="name"
+         class="form-control @error('name') is-invalid @enderror" id="name"
+         value="{{$user->name}}" required>
 
-          @error('password_confirmation')
+         @error('name')
+         <div class="alert alert-danger">{{$message}}</div>
+         @enderror
+       </div>
+     </div>
+
+
+     <div class="form-group">
+      <div class="col-md-5 mb-3">
+        <label for="email">Correo</label>
+        <input type="text" name="email"  class="form-control @error('email') is-invalid @enderror"
+        id="email" value="{{$user->email}}" required>
+
+        @error('email')
         <div class="alert alert-danger">{{$message}}</div>
-          @enderror
+        @enderror
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-5 mb-3">
+       <label for="password">Contraseña</label>
+       <input type="password" name="password"
+       class="form-control @error('password') is-invalid @enderror text-center" id="password" required autocomplete="new-password">
+
+       @error('password')
+       <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+      </span>
+       @enderror
+     </div>
+   </div>
+
+   <div class="form-group">
+    <div class="col-md-5 mb-3">
+      <label for="password-confirm">Confirmar Contraseña</label>
+      <input type="password" name="password_confirmation"
+      class="form-control @error('password_confirmation') is-invalid @enderror text-center"
+      id="password-confirm" placeholder="Confirmar Contraseña" required autocomplete="new-password">
+
+      @error('password_confirmation')
+      <div class="alert alert-danger">{{$message}}</div>
+      @enderror
+    </div>
   </div>
-</div>
 
 
-   <button type="submit" class="btn btn-outline-primary">Actualizar</button>
+  <button type="submit" class="btn btn-outline-primary">Actualizar</button>
 
 </form>
 
-               </div>
+</div>
 <div class="col-sm-6">
-        <div class="images">
- <div class="img1">
- <img src="images/care1.jpg" alt="CuidarAmbiente">
-        </div>
-        <div class="img2">
- <img src="images/logo1.jpg" alt="CuidarAmbiente">
-        </div>
-        </div>
+  <div class="images">
+   <div class="img1">
+     <img src="{{asset('images/care1.jpg')}}" alt="CuidarAmbiente">
+   </div>
+   <div class="img2">
+     <img src="{{asset('images/logo1.jpg')}}" alt="CuidarAmbiente">
+   </div>
+ </div>
 
 
-       </div>
-       </div>
+</div>
+</div>
 
 </div>
 
 {{-- Esta Función muestra el nombre del archivo en el input:file  --}}
 <script src="js/textImage.js"></script>
 {{-- ------------------------------------------------ --}}
-    <body>
-    </body>
-    </html>
+
+</body>
+</html>
 
