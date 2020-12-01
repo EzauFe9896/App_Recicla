@@ -65,8 +65,12 @@
             </div>
           </label>
           <input id="file" multiple="" name="avatar" size="6000" type="file"
-          accept="application/pdf,image/x-png,image/gif,image/jpeg,image/jpg,image/tiff">
+          class="form-control @error('email') is-invalid @enderror">
+          @error('avatar')
+        <div class="alert alert-danger">{{$message}}</div>
+        @enderror
         </div>
+
       </div>
     </div>
 

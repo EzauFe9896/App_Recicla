@@ -149,11 +149,11 @@
                       </a>
 
                       <div class="dropdown-menu dropdown-menu-right" aria-labelleby="navbarDropdown">
-                        <a class="dropdown-item mb-40" href="{{ route('logout') }}"
+                        <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                       {{ __('Cerrar sesión') }}</a>
-                      <a class="dropdown-item mb-40"  href="{{action('UserController@edit', Auth::user()->id) }}"> {{ __('Editar Perfil') }} </a>
+                      <a class="dropdown-item"  href="{{action('UserController@edit', Auth::user()->id) }}"> {{ __('Editar Perfil') }} </a>
 
                       <form id= "logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
