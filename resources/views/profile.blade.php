@@ -15,7 +15,7 @@
 
   <title>Editar Perfil</title>
 
-</head> 
+</head>
 <body>
 
   <div class="container-profile">
@@ -32,10 +32,11 @@
     <div class="row m-0 w-100">
       <div class="col-md-6">
 
+        <div class="container-msje">
        {{-- Muestra el mensaje si se registra correctamente --}}
        @if (session('success'))
        <div class="row m-0 w-100">
-        <div class="col-8">
+        <div class="col-sm-8">
            <div class="alert  alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -46,14 +47,13 @@
      </div>
      @endif
      {{-- Fin del mensaje --}}
+     </div>
 
      <form method="post" action="{{action('UserController@update', $id)}}" enctype="multipart/form-data">
       @csrf
-
-      {{-- @method('PUT')   <----No se si esto es mejor cambiarlo por patch --}}
       <div class="mb-4">
-        <img class="img-profile rounded-circle" src="{{ asset(Auth::user()->photo_route) }}">
-        {{-- Aqui un ejemplo con una imagen, pero debería de llamar la imagen que el usuario elija --}}
+        <img class="img-profile rounded-circle" src="{{ asset(Auth::user()->photo_route) }}" alt="Imagen de perfil" width="280" height="260">
+
       </div>
 
       <div class="row m-0 w-100">

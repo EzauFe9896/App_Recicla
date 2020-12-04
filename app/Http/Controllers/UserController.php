@@ -39,7 +39,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        
+
     }
 
     /**
@@ -90,7 +90,7 @@ class UserController extends Controller
     		->save('images/users/'. $file_name);
 
     	$user->avatar = $file_name;
-    	$user->save();   	
+    	$user->save();
 
     	DB::table('users')->where('id', $id)->update([
     		'name' => $request->name,

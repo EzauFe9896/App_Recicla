@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Con esta dirección llamo a mis estilos -->
-  <link rel="stylesheet" href="{{mix('css/styles.css')}}"> 
+  <link rel="stylesheet" href="{{mix('css/styles.css')}}">
   <!-- -------------------------------------- -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -81,22 +81,33 @@
       <div class="row m-0 w-100">
         <div class="col-2 col-md-2">
           <div class="dropdown">
-            <button class="icon-bar" type="button" id="dropdownMenuButton"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-bars"></i>
+            <button class="icon-bar" type="button" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenu"
+            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-bars"></i> <span class="caret"></span>
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{{ url('/') }}"><strong>Inicio</strong></a>
-            <a class="dropdown-item" method="get"  href="{{action('ContactanosController@create')}}"><strong>Contactanos</strong></a>
-            <a class="dropdown-item" href="#nosotros" data-toggle="modal" data-target="#staticBackdrop"><strong>Acerca de</strong></a>
-            <a class="dropdown-item" href="{{ url('/recurso') }}"><strong>Recursos</strong></a>
-            <a class="dropdown-item" href="{{ url('/login') }}"><strong>Iniciar Sesión</strong></a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
+            <i class="dropdown-item" type="button"><a href="{{ url('/') }}"><strong>Inicio</strong></a></i>
+            <i class="dropdown-item" type="button"><a method="get"  href="{{action('ContactanosController@create')}}"><strong>Contactanos</strong></a></i>
+            <button class="dropdown-item" type="button"  href="#nosotros" data-toggle="modal" data-target="#staticBackdrop"><strong>Acerca de</strong></button>
+            <button class="dropdown-item" type="button"><a href="{{ url('/recurso') }}"><strong>Recursos</strong></a></button>
+            <button class="dropdown-item" type="button"><a  href="{{ url('/login') }}"><strong>Iniciar Sesión</strong></a></button>
+            <button class="dropdown-item" type="button"><a href="{{ url('/register') }}"><strong>Registrarse</strong></a></button>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" method="get" role="button" href="{{action('RegistroVoluntarioController@create')}}">Registrarse como voluntario</a>
-            <a class="dropdown-item" href="#tipos_residuos">Tipos de residuos</a>
-            <a class="dropdown-item"  href="{{ url('/calculadora') }}">Gana en E-colones</a>
-            <a class="dropdown-item"  method="get" role="button" href="{{action('SolicitaTransporteController@create')}}"><strong>Solicitar tranporte de desechos</strong></a>
+            <button class="dropdown-item" type="button"><a method="get" role="button" href="{{action('RegistroVoluntarioController@create')}}"><strong>Registrarse como voluntario</strong></a></button>
+            <button class="dropdown-item" type="button"><a href="#tipos_residuos"><strong>Tipos de residuos</strong></a></button>
+            <button class="dropdown-item" type="button"><a  href="{{ url('/calculadora') }}"><strong>Gana en E-colones</strong></a></button>
+            <button class="dropdown-item" type="button"><a  method="get" role="button" href="{{action('SolicitaTransporteController@create')}}"><strong>Solicitar tranporte de desechos</strong></a></button>
 
+            {{-- <li><a  class="dropdown-item"  href="{{ url('/') }}"><strong>Inicio</strong></a></li>
+            <li><a  class="dropdown-item"  method="get"  href="{{action('ContactanosController@create')}}"><strong>Contactanos</strong></a></li>
+            <a  class="dropdown-item"  href="#nosotros" data-toggle="modal" data-target="#staticBackdrop"><strong>Acerca de</strong></a>
+            <a  class="dropdown-item" href="{{ url('/recurso') }}"><strong>Recursos</strong></a>
+            <a  href="{{ url('/login') }}"><strong>Iniciar Sesión</strong></a>
+            <div class="dropdown-divider"></div>
+            <a  class="dropdown-item"  method="get" role="button" href="{{action('RegistroVoluntarioController@create')}}">Registrarse como voluntario</a>
+            <a  class="dropdown-item"  href="#tipos_residuos">Tipos de residuos</a>
+            <a  class="dropdown-item"  href="{{ url('/calculadora') }}">Gana en E-colones</a>
+            <a  class="dropdown-item" class="dropdown-item"  method="get" role="button" href="{{action('SolicitaTransporteController@create')}}"><strong>Solicitar tranporte de desechos</strong></a> --}}
           </div>
         </div>
         <a href="{{ url('/') }}">
@@ -116,57 +127,49 @@
             <!-- Fin del search bar -->
           </div>
 
-          <div class="col-md-6 d-flex">
+          <div class="col-md-5 d-flex">
+            <nav class="navbar navbar-expand-lg">
+                <ul class="d-flex">
+              <li><a href="{{ url('/') }}"><strong>Inicio</strong></a></li>
 
-            <nav class="navbar navbar-expand-md">
-              <div class="container">
-                <div class="collapse navbar-collapse">
-                  <ul class="navbar-nav mr-auto d-flex">
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}"><strong>Inicio</strong></a></li>
+              <li><a method="get"  href="{{action('ContactanosController@create')}}"><strong>Contactanos</strong></a></li>
 
-                    <li class="nav-item"><a class="nav-link" method="get"  href="{{action('ContactanosController@create')}}"><strong>Contactanos</strong></a></li>
+              <li><a href="#nosotros" data-toggle="modal" data-target="#staticBackdrop"><strong>Acerca de</strong></a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="#nosotros" data-toggle="modal" data-target="#staticBackdrop"><strong>Acerca de</strong></a></li>
+              <li><a href="{{ url('/recurso') }}"><strong>Recursos</strong></a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/recurso') }}"><strong>Recursos</strong></a></li>
+             <!-- Inicio rutas login, register, logout -->
+             @guest
+             @if (Route::has('login'))
+             <li>
+               <a href="{{ route('login') }}"><strong>{{ __('Iniciar sesión') }}</strong> </a>
+             </li>
+             @endif
 
-                    <!-- Inicio rutas login, register, logout -->
-                    @guest
-                    @if (Route::has('login'))
-                    <li class="nav-item">
-                      <a class="nav-link"  href="{{ route('login') }}"><strong>{{ __('Iniciar sesión') }}</strong> </a>
-                    </li>
-                    @endif
+             @if (Route::has('register'))
+             <li>
+               <a href="{{ route('register') }}"><strong>{{ __('Registrarse') }}</strong></a>
+             </li>
+             @endif
+             @else
+             <li>
+               <a href="#"  id="navbarDropdown" data-toggle="dropdown"><strong>Hola, {{ Auth::user()->username }}</strong>
+               </a>
 
-                    @if (Route::has('register'))
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{ route('register') }}"><strong>{{ __('Registrarse') }}</strong></a>
-                    </li>
-                    @endif
-                    @else
-                    <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"><strong>Hola, {{ Auth::user()->username }}</strong>
-                      </a>
+               <div class="dropdown-menu dropdown-menu-right" aria-labelleby="navbarDropdown">
+                 <button class="dropdown-item" href="{{ route('logout') }}"
+                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Cerrar sesión') }}</button>
+               <a class="dropdown-item"  href="{{action('UserController@edit', Auth::user()->id) }}"> {{ __('Editar Perfil') }} </a>
 
-                      <div class="dropdown-menu dropdown-menu-right" aria-labelleby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                      {{ __('Cerrar sesión') }}</a>
-                      <a class="dropdown-item"  href="{{action('UserController@edit', Auth::user()->id) }}"> {{ __('Editar Perfil') }} </a>
-
-                      <form id= "logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                      </form>
-                    </div>
-                  </li>
-                  @endguest
-                  <!-- Fin rutas login, register, logout -->
+               <form id= "logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                 @csrf
+               </form>
+             </div>
+           </li>
+           @endguest
+           <!-- Fin rutas login, register, logout -->
                 </ul>
-              </div>
-            </div>
-          </nav>
-
+              </nav>
         </div>
       </div>
     </div>
@@ -262,7 +265,7 @@
     <div class="carousel-item">
       <img src="images/pi4.jpg" alt="Banner 3" width="1100" height="500">
       <div class="carousel-caption">
-        <h5>¿Quieres sabes más?</h5>
+        <h5>¿Quieres saber más?</h5>
         <p>¡Recolección de residuos rápida y conveniente!</p>
 
         <a method="get" role="button" href="{{action('ContactanosController@create')}}">

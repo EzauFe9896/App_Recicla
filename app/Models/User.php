@@ -23,7 +23,7 @@ class User extends Authenticatable
         'email',
         'password',
     ];
- 
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -47,6 +47,6 @@ class User extends Authenticatable
         if($this->avatar)
             return 'images/users/'.$this->avatar;
 
-        return 'images/vidrio.jpg';
+        return 'images/users/usuario.png';
     }
 }

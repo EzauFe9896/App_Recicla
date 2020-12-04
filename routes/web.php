@@ -67,5 +67,5 @@ Route::post('contacto/add','ContactanosController@store');
     return view('profile');
 });*/
 
-Route::get('profile/{id}',[UserController::class, 'edit']);
-Route::post('profile/{id}',[UserController::class, 'update']);
+Route::get('profile/{id}',[UserController::class, 'edit'])->middleware('auth');
+Route::post('profile/{id}',[UserController::class, 'update'])->middleware('auth');
